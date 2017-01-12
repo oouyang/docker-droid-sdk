@@ -12,7 +12,7 @@ RUN dpkg --add-architecture i386 \
 # Install Android SDK
 ENV ANDROID_HOME="/opt/android-sdk-linux" \
     PATH="${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools" \
-    SDK_URL="https://dl.google.com/android/repository/tools_r21.1.2-linux.zip"
+    SDK_URL="https://dl-ssl.google.com/android/repository/build-tools_r21.1.2-linux.zip"
 
 RUN mkdir -p $ANDROID_HOME \
  && cd $ANDROID_HOME \
