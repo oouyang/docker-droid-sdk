@@ -16,7 +16,7 @@ ENV ANDROID_HOME="/opt/android-sdk-linux" \
 
 RUN mkdir -p $ANDROID_HOME && \
   echo "Install Android SDK" && \
-  wget -o android-sdk.tgz http://dl.google.com/android/android-sdk_r24.3-linux.tgz && \
+  wget -O android-sdk.tgz http://dl.google.com/android/android-sdk_r24.3-linux.tgz && \
   tar -xvzf android-sdk.tgz && \
   mv android-sdk-linux /opt/android-sdk-linux && \
   rm android-sdk.tgz && \
