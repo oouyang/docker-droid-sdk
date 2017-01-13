@@ -13,6 +13,7 @@ RUN dpkg --add-architecture i386 \
 ENV ANDROID_HOME="/opt/android-sdk-linux" \
     PATH="${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools" \
     SDK_URL="http://dl.google.com/android/repository/build-tools_r25.0.2-linux.zip"
+    ANDROID_COMPONENTS=platform-tools,android-23,android-21,android-24,build-tools-23.0.2,build-tools-24.0.0,build-tools-21.1.2,build-tools-25.0.2
 
 RUN mkdir -p $ANDROID_HOME && \
   echo "Install Android SDK" && \
