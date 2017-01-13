@@ -1,4 +1,4 @@
-FROM frekele/gradle:2.1.2-jdk8
+FROM frekele/gradle:3.2.1-jdk8
 
 MAINTAINER Owen Ouyang<owen.ouyang@live.com>
 
