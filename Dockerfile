@@ -22,7 +22,7 @@ RUN mkdir -p $ANDROID_HOME \
  && rm sdk.zip \
  && echo y | /opt/android-sdk-linux/tools/android update sdk --filter "${ANDROID_COMPONENTS}" --no-ui -a
 
-COPY ./licenses $ANDROID_HOME/licenses
+# COPY ./licenses $ANDROID_HOME/licenses
 
 
 
