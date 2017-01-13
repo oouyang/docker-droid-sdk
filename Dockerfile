@@ -54,21 +54,27 @@ RUN locale-gen $LANG && \
   zlib1g-dev \
   --no-install-recommends && \
   \
+  echo "Install Java" && \
   apt-add-repository ppa:openjdk-r/ppa && \
   apt-get update  apt-get -y install openjdk-8-jdk && \
   \
+  echo "Clean up apt-get " && \
   rm -rf /var/lib/apt/lists/* && \
   apt-get clean && \
   \
+  echo "Install Android SDK" && \
   wget -o android-sdk.tgz http://dl.google.com/android/android-sdk_r24.3-linux.tgz && \
   tar -xvzf android-sdk.tgz && \
   mv android-sdk-linux /opt/android-sdk-linux && \
   rm android-sdk.tgz && \
+  echo "Install Android tools" && \
   echo y | /usr/local/android-sdk/tools/android update sdk --filter "${ANDROID_COMPONENTS}" --no-ui -a && \
+  echo "Install Android NDK" && \
   wget http://dl.google.com/android/repository/android-ndk-r12-linux-x86_64.zip && \
   unzip android-ndk-r12-linux-x86_64.zip && \
   mv android-ndk-r12 /usr/local/android-ndk && \
   rm android-ndk-r12-linux-x86_64.zip && \
+  echo "Cleaning" && \
   apt-get clean && \
   chown -R $RUN_USER:$RUN_USER $ANDROID_HOME $ANDROID_SDK_HOME $ANDROID_NDK_HOME && \
   chmod -R a+rx $ANDROID_HOME $ANDROID_SDK_HOME $ANDROID_NDK_HOME && \
