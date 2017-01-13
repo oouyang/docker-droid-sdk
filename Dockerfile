@@ -5,7 +5,7 @@ MAINTAINER Owen Ouyang<owen.ouyang@live.com>
 # Install Git and dependencies
 RUN dpkg --add-architecture i386 \
  && apt-get update \
- && apt-get install -y git libncurses5:i386 libstdc++6:i386 zlib1g:i386 \
+ && apt-get install -y git openssh-server openssh-client libncurses5:i386 libstdc++6:i386 zlib1g:i386 \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists /var/cache/apt
 
