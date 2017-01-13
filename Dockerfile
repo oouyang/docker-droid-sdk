@@ -21,7 +21,7 @@ RUN mkdir -p $ANDROID_HOME && \
   mv android-sdk-linux /opt/android-sdk-linux && \
   rm android-sdk.tgz && \
   echo "Install Android tools" && \
-  echo y | /usr/local/android-sdk/tools/android update sdk --filter "${ANDROID_COMPONENTS}" --no-ui -a
+  echo y | /opt/android-sdk-linux/tools/android update sdk --filter "${ANDROID_COMPONENTS}" --no-ui -a
 
 # && cd $ANDROID_HOME \
 # && curl -o sdk.zip $SDK_URL \
