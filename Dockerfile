@@ -14,7 +14,7 @@ ENV ANDROID_HOME="/opt/android-sdk-linux" \
     PATH="${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools" \
     SDK_URL="http://dl.google.com/android/repository/build-tools_r25.0.2-linux.zip"
 
-RUN mkdir -p $ANDROID_HOME \
+RUN mkdir -p $ANDROID_HOME && \
   echo "Install Android SDK" && \
   wget -o android-sdk.tgz http://dl.google.com/android/android-sdk_r24.3-linux.tgz && \
   tar -xvzf android-sdk.tgz && \
